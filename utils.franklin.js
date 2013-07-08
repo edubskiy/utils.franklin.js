@@ -179,7 +179,7 @@
         removeClass: function(elem, className) {
             if ( elem.nodeType === 1 && elem.className ) {
                 var spaceChar = /\s+/;
-                if (className) {
+                if (elem.className) {
                     var classNames = elem.className.split(spaceChar);
                     for (var i = 0, l = classNames.length; i < l; i++) {
                         if (classNames[i] === className) {
@@ -187,8 +187,6 @@
                         }
                     }
                     elem.className = classNames.join(' ');
-                } else {
-                    elem.className = className;
                 }
             }
             return elem;
